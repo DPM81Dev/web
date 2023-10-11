@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #time, #location {
+    font-size: 20px;
+  }
+  
+  #time::before {
+    content: "La hora actual es: ";
+  }
+  
+  #location::before {
+    content: "La procedencia de acceso es: ";
+  }
