@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejemplo de diseño fluido con dos columnas</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript">
+	    function loadPage(page) {
+	    	//alert("Pagina pulsada: "+page);
+	    	document.getElementById("contenido").innerHTML='<object type="text/html" data="Page1.html"></object>';
+	    	//document.getElementById("contenido").innerHTML='<h1>Hola Mundo5</h1>';
+	    }
+	</script>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="cabecera">
+        <p>Diseño HTML/CSS fluido.</p>
+      </div>
+      <div id="columnas">
+        <div id="menu">
+          <ul>
+            <li onclick="loadPage('Page1.html');">Enlace 1</a></li>
+            <li><a href="#" onclick="loadPage('Page2.html');">Enlace 2</a></li>
+            <li><a href="Page1.html">Enlace 3</a></li>
+            <li><a href="#">Enlace 4</a></li>
+            <li><a href="#">Enlace 5</a></li>
+          </ul>
+        </div>
+        <div id="contenido">
+          <h1>Elemplo: Diseño fluido con dos columnas</h1>
+          <p>Al cambiar la anchura de la ventana del navegador donde se esté visualizando esta página web, el tamaño de las diferentes áreas de la página se redimensionan.</p>
+          <img src="../3.Links_Tablas/image/html-lenguaje-de-marcado-de-hipertexto.jpg" alt="Html">
+          <p>Obsérvese que, la imagen también se redimensiona.</p>
+        </div>
+      </div>
+      <div id="pie">
+        <p>©<a href="https://cftic.centrosdeformacion.empleo.madrid.org/" target="_blank">CFTIC Getafe</a> 2024</p>
+      </div>
+    </div>
+  </body>
+</html>
