@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<title>Ejemplo uso de thead, tbody y tfoot</title>
+<style>
+table, td, th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	padding: 5px;
+}
+
+thead {
+	color: navy;
+}
+
+tbody {
+	color: green;
+}
+
+tfoot {
+	color: maroon;
+}
+</style>
+</head>
+<body>
+	<table>
+		<caption>Lista de la compra</caption>
+		<thead>
+			<tr>
+				<th>Producto</th>
+				<th>Cantidad</th>
+				<th>Precio</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan="2">Total</td>
+				<td>20</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>Destornillador</td>
+				<td>1</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>Llave inglesa</td>
+				<td>2</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>Martillo</td>
+				<td>1</td>
+				<td>7</td>
+			</tr>
+		<tbody>
+	</table>
+</body>
+</html>
