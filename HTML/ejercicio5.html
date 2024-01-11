@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recetas y musica</title>
+  <link rel="stylesheet" href="estilos5.css">
+  <script type="text/javascript">
+    function loadPage(page) {
+      //alert("Pagina pulsada: "+page);
+      document.getElementById("contenido").innerHTML = '<object style="width: 100%" type="text/html" data='+ page +'></object>';
+      //document.getElementById("contenido").innerHTML='<h1>Hola Mundo5</h1>';
+    }
+
+   function logout(image){
+    alert('ADIOS PERRO !!');
+    loadPage(image);
+   }
+ 
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Musica y Recetas</h1>
+    <div class="logout">
+      <img onclick="logout('./images/adios.jpg')" src="./images/logout.png" alt="logout">
+      </div>
+    </div>
+    <div class="central-content">
+      <div class="central-col">
+        <ul>
+          <li><a href="#" onclick="loadPage('/HTML/Listas_Recetas/recetas.html');">Enlace 1</a></li>
+          <li><a href="#" onclick="loadPage('/HTML/ejercicio4.html');">Enlace 2</a></li>
+        </ul>
+      </div>
+      <div class="contenido" id="contenido">
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>Diseñado y Codificado por DPM81Dev para <a href="https://cftic.centrosdeformacion.empleo.madrid.org/cursos"
+          target="_blank">CFTIC</a>
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>
