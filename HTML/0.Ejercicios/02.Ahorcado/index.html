@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #juego {
+            display: inline-block;
+        }
+
+        #letras {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="juego">
+        <p id="palabra"></p>
+        <p id="intentos"></p>
+        <p id="errores"></p>
+        <p id="resultado"></p>
+    </div>
+    <div id="letras">
+        Letra:<input type="text" maxlength="1" size="2" id="texto" onkeyup="this.value = this.value.toUpperCase();">
+        <button>Probar Letra</button>
+        <br>
+        <button type="reset">Nueva Partida</button>
+    </div>
+    <script>
+        // evento del boton probar letra
+        
+        // evento del boton nueva partida
+        let palabraSecreta = "CASA"; // Puedes cambiar esto por una palabra aleatoria o un arreglo de palabras
+        let palabraMostrar = [];
+        let intentos = 5;
+        let errores = [];
+
+        function inicializarJuego() {
+            for (let i = 0; i < palabraSecreta.length; i++) {
+                palabraMostrar[i] = "_";
+            }
+            document.getElementById("palabra").innerHTML = palabraMostrar.join(" ");
+            document.getElementById("intentos").innerHTML = "Tienes " + intentos + " oportunidades";
+            document.getElementById("errores").innerHTML = "Letras incorrectas: " + errores.join(", ");
+            document.getElementById("resultado").innerHTML = "";
+        }
+
+        function probarLetra(letra) {
+            if (intentos > 0) {
+                let correcto = false;
+                for (let i = 0; i < palabraSecreta.length; i++) {
+                    if (palabraSecreta[i] === letra) {
+                        palabraMostrar[i] = letra;
+                        correcto = true;
+                    }
+                }
+                if (!correcto) {
+                    intentos--;
+                    errores.push(letra);
+                }
+                document.getElementById("palabra").innerHTML = palabraMostrar.join(" ");
+                document.getElementById("intentos").innerHTML = "Tienes " + intentos + " oportunidades";
+                document.getElementById("errores").innerHTML = "Letras incorrectas: " + errores.join(", ");
+                if (palabraSecreta === palabraMostrar.join("")) {
+                    document.getElementById("resultado").innerHTML = "¡Felicidades, has ganado!";
+                } else if (intentos === 0) {
+                    document.getElementById("resultado").innerHTML = "Lo siento, has perdido. La palabra era: " + palabraSecreta;
+                }
+            }
+        }
+
+        window.onload = inicializarJuego;
+    </script>
+</body>
+
+</html>
