@@ -30,9 +30,9 @@
     </div>
     <div id="letras">
         Letra:<input type="text" maxlength="1" size="2" id="texto"
-            onkeyup="this.value = this.value.toUpperCase();"><button id="probarLetra">Probar Letra</button>
+            onkeyup="this.value = this.value.toUpperCase();"><button onclick="comprobarLetra(document.getElementById('letra').value)">Comprobar letra</button>
         <br><br><br>
-        <button type="inicializarJuego">Nueva Partida</button>
+        <button onclick="inicializarJuego()">Nueva partida</button>
     </div>
     <script>
         let palabraSecreta = "CASA"; // Puedes cambiar esto por una palabra aleatoria o un arreglo de palabras
