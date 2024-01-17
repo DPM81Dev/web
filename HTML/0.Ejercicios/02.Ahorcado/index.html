@@ -29,15 +29,12 @@
         <p id="resultado"></p>
     </div>
     <div id="letras">
-        Letra:<input type="text" maxlength="1" size="2" id="texto" onkeyup="this.value = this.value.toUpperCase();">
-        <button>Probar Letra</button>
-        <br>
-        <button type="reset">Nueva Partida</button>
+        Letra:<input type="text" maxlength="1" size="2" id="texto"
+            onkeyup="this.value = this.value.toUpperCase();"><button id="probarLetra">Probar Letra</button>
+        <br><br><br>
+        <button type="inicializarJuego">Nueva Partida</button>
     </div>
     <script>
-        // evento del boton probar letra
-        
-        // evento del boton nueva partida
         let palabraSecreta = "CASA"; // Puedes cambiar esto por una palabra aleatoria o un arreglo de palabras
         let palabraMostrar = [];
         let intentos = 5;
