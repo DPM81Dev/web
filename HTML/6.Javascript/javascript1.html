@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+a:active {
+	color: blue
+}
+</style>
+<script type="text/javascript">
+	//getElementById es una función de document que permite llamar a un objeto concreto de la página.
+	function getfocus() {
+		document.getElementById('cajaTexto').focus();
+		document.getElementById('cajaTexto').value = "Hola";
+	}
+
+	function losefocus() {
+		document.getElementById('cajaTexto').blur();
+		document.getElementById('cajaTexto').value = "";
+	}
+
+	function setfocus() {
+		document.forms[1].cajaTexto.focus();
+		document.forms[1].cajaTexto.value="test";
+	}
+</script>
+</head>
+
+<body>
+
+	<form id="form0">
+		<input id="cajaTexto" type="text" placeholder="Texto"> <br>
+		<br> <input type="button" onclick="getfocus()"
+			value="Coge el foco"> <input type="button"
+			onclick="losefocus()" value="Pierde el foco">
+	</form>
+	<br>
+	<form action="" id="form1">
+		<input type="text" name="cajaTexto" size="30" value="¡Hola mundo!">
+		<input type="text" name="cajaTexto2" size="30" value="¡Hola mundo2!">
+		<br>
+		<br>	
+		<input type="button" value="Selecciona texto" onclick="setfocus()">
+	</form>
+	
+	
+	
+</body>
+</html>

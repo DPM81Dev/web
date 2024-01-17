@@ -1,4 +1,4 @@
-const word = 'SUADENBIF';
+const word = 'ARBOL';
 const maxWrongGuesses = 6;
 let incorrectGuesses = 0;
 let guessedLetters = new Set();

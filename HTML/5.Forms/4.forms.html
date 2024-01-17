@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<title>Ejemplo de agrupación de controles en un formulario</title>
+<script type="text/javascript">
+	function enviar(){
+		nombre = document.getElementById("oculto").value;
+		alert(nombre)
+	}
+</script>
+
+</head>
+<body>
+	<form action="" method="post">
+		<fieldset>
+			<legend>Datos personales:</legend>
+			Campo de texto: <br> <input id="texto1" type="text" value="hola" name="campo_de_texto">
+			<br>password: <br> <input id="password" type="password" name="password">
+			<input id="oculto" type="hidden" value="hola">
+			<br> Lista de selección: <br> 
+			<select name="lista_de_seleccion">
+				<option value="opcion1">Opción 1</option>
+				<option value="opcion2">Opción 2</option>
+				<option value="opcion3">Opción 3</option>
+			</select> <br> 
+			Área de texto: <br>
+			<textarea name="area_de_texto" rows="3" cols="50">En este control del formulario se pueden escribir varias líneas de texto.</textarea>
+		</fieldset>
+		<fieldset>
+			<legend>Agrupación de botones:</legend>
+			<button type="reset">Resetear</button>
+			<button type="submit" onclick="enviar()">Enviar</button>
+		</fieldset>
+	</form>
+</body>
+</html>

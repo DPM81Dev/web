@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Avanzado</title>
+</head>
+<body>
+  
+<h1>Formularios</h1>
+
+<form>
+ 
+    <label for="nombre">Nombre:</label>
+    <input type="text"
+           value=""
+           placeholder="Escribe tu nombre"
+           name="nombre"
+           id="nombre"
+           maxlength="15"
+           required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password"
+            id="password"
+            maxlength="10"
+            required><br>
+
+
+    <input type="button" value="Pulsar">
+    <button>Púlsame</button><br>
+     
+    <label for="condiciones">Acepta las condiciones?</label>
+    <input type="checkbox" id="Condiciones"><br>
+
+    <input type="color"><br>
+    <input type="date"><br>
+    <input type="file"><br>
+     <input type="hidden">
+     <input type="month"><br>
+
+     <label for="estado">Estado:</label>
+     <input type="radio" name="estado" value="casado">Casado
+     <input type="radio" name="estado" value="soltero">Soltero<br><br>
+
+     <label for="peces">Peces</label>
+     <select name="peces" id="">
+       
+      <optgroup label="mediterraneo">
+        <option value="sargo">sargo</option>
+        <option value="dorada">dorada</option>
+        <option value="denton">denton</option>
+      </optgroup>
+
+      <optgroup label="atlantico">
+         <option value="salmon">salmon</option>
+         <option value="merluza">merluza</option>
+         <option value="rape">rape</option>
+      </optgroup>
+
+
+   
+
+     </select><br>
+
+     
+     <input type="submit">
+    </form>
+   
+ 
+
+  
+</body>
+</html>

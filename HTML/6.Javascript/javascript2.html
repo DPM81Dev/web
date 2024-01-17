@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function getAction() {
+		var x = document.forms.myForm;
+		alert(x.action);
+	}
+
+	function changeAction(action) {
+		var myform = document.forms.myForm;
+		myform.action = action;
+		alert(myform.action);
+	}
+</script>
+</head>
+
+<body>
+	<form name="myForm" action="/LlamadaServidor">
+		<input type="button" onclick="getAction()" value="Ver el valor del atributo action">
+		<br><br>
+		<input type="button"
+			onclick="changeAction('./hola.jsp')"
+			value="Cambiar el valor del atributo action">
+	</form>
+</body>
+</html>

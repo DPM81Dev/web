@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo de formulario con algunos de los controles más
+		utilizados</title>
+</head>
+
+<body>
+	<form action="" method="post">
+		Campo de texto: <br> <input type="text" required="true" name="campo_de_texto" placeholder="Introduce tu nombre"
+			size="20" maxlength="10">
+		<br> Lista de selección: <br>
+		<select name="lista_de_seleccion">
+			<option value="opcion0">Seleccione una opción</option>
+			<option value="xxxxx">Opción 1</option>
+			<option value="opcion2">Opción 2</option>
+			<option value="opcion3" selected="selected">Opción 3</option>
+		</select>
+		<br>
+		<br> Área de texto: <br>
+		<textarea name="area_de_texto" rows="3" cols="20" maxlength="200">
+			En este control del formulario se pueden escribir varias líneas de texto.
+		</textarea>
+		<br>
+		<br>
+		<button type="reset">Resetear</button>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+
+</html>
