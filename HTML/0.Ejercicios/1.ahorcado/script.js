@@ -113,3 +113,40 @@ const startGame = () => {
 };
 
 startButton.addEventListener('click', startGame);
+// Palabras posibles
+var words = ['PERRO', 'GATO', 'CONEJO', 'TORTUGA', 'SERPIENTE'];
+// Palabra seleccionada al azar
+var word = words[Math.floor(Math.random() * words.length)];
+// Representación de la palabra a adivinar
+var answerArray = [];
+for (var i = 0; i < word.length; i++) {
+    answerArray[i] = "_";
+}
+// Número de intentos restantes
+var remainingLetters = word.length;
+var attempts = 5;
+
+function guessLetter(letter) {
+    if (attempts > 0) {
+        var correctGuess = false;
+        for (var j = 0; j < word.length; j++) {
+            if (word[j] === letter && answerArray[j] === "_") {
+                answerArray[j] = letter;
+                remainingLetters--;
+                correctGuess = true;
+            }
+        }
+        if (!correctGuess) {
+            attempts--;
+        }
+        document.getElementById('word').textContent = answerArray.join(' ');
+        if (remainingLetters > 0) {
+            document.getElementById('message').textContent = "Te quedan " + attempts + " intentos.";
+        } else {
+            document.getElementById('message').textContent = "¡Has ganado!";
+        }
+        if (attempts === 0 && remainingLetters > 0) {
+            document.getElementById('message').textContent = "Has perdido. La palabra era '" + word + "'.";
+        }
+    }
+}
