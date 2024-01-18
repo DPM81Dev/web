@@ -17,10 +17,10 @@ const bodyParts = [
     [5,3,1,1]
 ];
 
-let selectedWord;
+let palabraOculta;
 let letrasUsadas;
-let mistakes;
-let hits;
+let fallos;
+let aciertos;
 
 const addLetter = letras => {
     const letrasElement = document.createElement('span');
@@ -33,10 +33,10 @@ const addBodyPart = bodyPart => {
     ctx.fillRect(...bodyPart);
 };
 
-const wrongLetter = () => {
-    addBodyPart(bodyParts[mistakes]);
-    mistakes++;
-    if(mistakes === bodyParts.length) endGame();
+const letraErronea = () => {
+    addBodyPart(bodyParts[fallos]);
+    fallos++;
+    if(fallos === bodyParts.length) endGame();
 }
 
 const endGame = () => {
@@ -49,31 +49,31 @@ const correctLetter = letras => {
     for(let i = 0; i < children.length; i++) {
         if(children[i].innerHTML === letras) {
             children[i].classList.toggle('hidden');
-            hits++;
+            aciertos++;
         }
     }
-    if(hits === selectedWord.length) endGame();
+    if(aciertos === palabraOculta.length) endGame();
 }
 
 const letrasInput = letras => {
-    if(selectedWord.includes(letras)) {
+    if(palabraOculta.includes(letras)) {
         correctLetter(letras);
     } else {
-        wrongLetter();
+        letraErronea();
     }
     addLetter(letras);
     letrasUsadas.push(letras);
 };
 
 const letrasEvent = event => {
-    let newLetter = event.key.toUpperCase();
-    if(newLetter.match(/^[a-zñ]$/i) && !letrasUsadas.includes(newLetter)) {
-        letrasInput(newLetter);
+    let nuevaLetra = event.key.toUpperCase();
+    if(nuevaLetra.match(/^[a-zñ]$/i) && !letrasUsadas.includes(nuevaLetra)) {
+        letrasInput(nuevaLetra);
     };
 };
 
 const drawWord = () => {
-    selectedWord.forEach(letras => {
+    palabraOculta.forEach(letras => {
         const letrasElement = document.createElement('span');
         letrasElement.innerHTML = letras.toUpperCase();
         letrasElement.classList.add('letras');
@@ -84,7 +84,7 @@ const drawWord = () => {
 
 const selectRandomWord = () => {
     let word = words[Math.floor((Math.random() * words.length))].toUpperCase();
-    selectedWord = word.split('');
+    palabraOculta = word.split('');
 };
 
 const drawHangMan = () => {
@@ -101,8 +101,8 @@ const drawHangMan = () => {
 
 const startGame = () => {
     letrasUsadas = [];
-    mistakes = 0;
-    hits = 0;
+    fallos = 0;
+    aciertos = 0;
     wordContainer.innerHTML = '';
     letrasUsadasElement.innerHTML = '';
     startButton.style.display = 'none';

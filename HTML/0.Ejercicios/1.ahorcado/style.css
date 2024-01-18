@@ -2,6 +2,15 @@
     color: transparent;
 }
 
+.container {
+    display: flex;
+  }
+  
+  .image-div {
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+
 body {
     background-color: #4a4063;
     color: #fff;
