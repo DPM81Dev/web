@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(./img/fondoMath.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        fieldset{
+            background-color: cadetblue;
+            width: 20%;
+            border-radius: 3%;
+        }
+        legend, p{
+            color: rgb(248, 219, 183);
+        }
+        img{
+            width: 40px;
+        }
+        .botonCalcular{
+            width: 100px;
+            height: 46px;
+        }
+
+        #cuerpoCalculadora{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script type="text/javascript">
+       let numero = "0";
+       let operacion = "";
+       function operar(signo){
+        operacion = signo
+        console.log("Operar")
+//        alert("Operar")
+        cajaNumero = document.getElementById("numeroARecoger")
+        numero = cajaNumero.value;
+        console.log("Numero: "+numero)
+//        alert(numero)
+        cajaNumero.value = "0"
+        document.getElementById("numeroARecoger").focus();
+
+       }
+
+       function resultado(){
+        numero2 = document.getElementById("numeroARecoger").value
+        console.log("numero2: "+numero2)
+
+        if(operacion=="+"){
+            resultado = Number(numero) + Number(numero2)
+        }else if(operacion=="-"){
+            resultado = Number(numero) - Number(numero2)
+        }else if(operacion=="*"){
+            resultado = Number(numero) * Number(numero2)
+        }else if(operacion=="/"){
+            resultado = Number(numero) / Number(numero2)
+        }
+        
+        console.log("resultado: "+resultado)
+        document.getElementById("resultadoAMostrar").value = resultado
+
+        document.getElementById("numeroARecoger").value = 0
+        document.getElementById("numeroARecoger").focus();
+
+       }
+    </script>
+</head>
+<body>
+    <div id="cuerpoCalculadora">
+        <form >
+            <fieldset>
+                <legend>
+                    <b>CALCULADORA</b>
+                </legend>
+                <label >
+                    Número &nbsp; &ensp; &ensp;
+                </label>
+                <input id="numeroARecoger" type="number" name="numero" autofocus></input>
+                <p>
+                    Resultado &nbsp; &ensp;
+                </p>
+                <input id="resultadoAMostrar" type="number" name="resultado" readonly></input>
+                <div id="botoneraPrincipal">
+                    <!-- <button onclick="operar()">Operar</button> -->
+                    <a href="#" onclick="operar('+')"><img src="./img/botonSuma.png"></a>
+                    <a href="#" onclick="operar('-')"><img src="./img/botonRestaa.png"></a>
+                    <a href="#" onclick="operar('*')"><img src="./img/botonmultiplicacion.png"></a>
+                    <a href="#" onclick="operar('/')"><img src="./img/botonDivision.png"></a>
+                </div>
+                <div id="botonResultado" style="width: 100%;">
+                    <a href="#" onclick="resultado()"><img class="botonCalcular" src="./img/botonCalcular.png"></a>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
